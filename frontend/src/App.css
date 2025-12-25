@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.blank{
+  color: blue;
+  text-align: center;
+  font-size: large;
+}
+
+.container{
+  color: hotpink;
+  text-align: right;
+  font-family: 'Courier New', Courier, monospace;
+  float: inline-start;
+  font-size: xx-large;
+}
+
+h3{
+  color:blueviolet;
+  text-align: center;
+  height: 50px;
+  font-size: xx-large;
+}
