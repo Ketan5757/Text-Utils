@@ -27,32 +27,40 @@ function App() {
   </div>
 </nav> 
 
-{/* Card component (placeholders)*/}
-<div className="card">
-  <img src="..." className="card-img-top" alt="..."/>
 
-  <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-    <a href="/" className="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+{/* This is a scroll spy component */}
 
-<div className="card" aria-hidden="true">
-  <img src="..." className="card-img-top" alt="..."/>
-  <div className="card-body">
-    <h5 className="card-title placeholder-glow">
-      <span className="placeholder col-6"></span>
-    </h5>
-    <p className="card-text placeholder-glow">
-      <span className="placeholder col-7"></span>
-      <span className="placeholder col-4"></span>
-      <span className="placeholder col-4"></span>
-      <span className="placeholder col-6"></span>
-      <span className="placeholder col-8"></span>
-    </p>
-    <a href ="/" className="btn btn-primary disabled placeholder col-6" aria-disabled="true">Go to Main Screen</a>
-  </div>
+<nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+  <a class="navbar-brand" href="/">Navbar</a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading1">First</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading2">Second</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/" role="button" aria-expanded="false">Dropdown</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+        <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+        <li><hr class="dropdown-divider"/></li>
+        <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+  <h4 id="scrollspyHeading1">First heading</h4>
+  <p>...</p>
+  <h4 id="scrollspyHeading2">Second heading</h4>
+  <p>...</p>
+  <h4 id="scrollspyHeading3">Third heading</h4>
+  <p>...</p>
+  <h4 id="scrollspyHeading4">Fourth heading</h4>
+  <p>...</p>
+  <h4 id="scrollspyHeading5">Fifth heading</h4>
+  <p>...</p>
 </div>
 
 {/* This is a footer */}
