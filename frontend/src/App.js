@@ -77,7 +77,6 @@ function App() {
     2 days ago
   </div>
 </div>
-
     </>
   );
 }
