@@ -28,57 +28,6 @@ export default function Navbar(props) {
     </div>
   </div>
 </nav> 
-
-
-{/* This is a scroll spy component */}
-
-<nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
-  <a className="navbar-brand" href="/">Navbar</a>
-  <ul className="nav nav-pills">
-    <li className="nav-item">
-      <a className="nav-link" href="#scrollspyHeading1">First</a>
-    </li>
-    <li className="nav-item">
-      <a className="nav-link" href="#scrollspyHeading2">Second</a>
-    </li>
-    <li className="nav-item dropdown">
-      <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/" role="button" aria-expanded="false">Dropdown</a>
-      <ul className="dropdown-menu">
-        <li><a className="dropdown-item" href="#scrollspyHeading3">Third</a></li>
-        <li><a className="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
-        <li><hr className="dropdown-divider"/></li>
-        <li><a className="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-<div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
-  <h4 id="scrollspyHeading1">First heading</h4>
-  <p>...</p>
-  <h4 id="scrollspyHeading2">Second heading</h4>
-  <p>...</p>
-  <h4 id="scrollspyHeading3">Third heading</h4>
-  <p>...</p>
-  <h4 id="scrollspyHeading4">Fourth heading</h4>
-  <p>...</p>
-  <h4 id="scrollspyHeading5">Fifth heading</h4>
-  <p>...</p>
-</div>
-
-{/* This is a footer */}
-<div className="card text-center">
-  <div className="card-header">
-    Featured
-  </div>
-  <div className="card-body">
-    <h5 className="card-title">Special title treatment</h5>
-    <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="/" className="btn btn-primary">Go somewhere</a>
-  </div>
-  <div className="card-footer text-body-secondary">
-    2 days ago
-  </div>
-</div>
 </>
    
   )
@@ -89,8 +38,8 @@ Navbar.propTypes ={
     abouttext: PropTypes.string.isRequired
 }
 
-// Navbar.defaultProps ={
-//     title: "Set title here",
-//     abouttext: "About text here"
-// }
+Navbar.defaultProps ={
+    title: "Set title here",
+    abouttext: "About text here"
+}
 
