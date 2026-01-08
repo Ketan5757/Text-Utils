@@ -4,13 +4,14 @@ import PropTypes from 'prop-types'
 
 
 export default function TextForm(props) {
-
+  
+    //convert the text to upper case
     const myfunc =()=>{
         console.log("uppercase was clicked" + text);
         let newtext = text.toUpperCase();
         setText(newtext);
     }
-
+    //convert the text to lower case
     const lowerCase =() =>{
       console.log("convert the text to lower case" + text);
       let newText = text.toLowerCase();
