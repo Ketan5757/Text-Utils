@@ -11,25 +11,34 @@ export default function TextForm(props) {
         setText(newtext);
     }
 
+    const lowerCase =() =>{
+      console.log("convert the text to lower case" + text);
+      let newText = text.toLowerCase();
+      setText(newText);
+    }
+
     const handleonChange =(event)=>{
         console.log("on change");
         setText(event.target.value);
 
     }
 
-    const[text, setText] = useState("Enter text here");
+    const[text, setText] = useState("");
   return (
     <>
     
   <div className="mb-3">
     <h1>{props.heading}</h1>
-    <textarea className='form-control' value ={text} onChange ={handleonChange}id='myBox' rows='8'></textarea>
+    <textarea className='form-control' value ={text} onChange ={handleonChange}id='myBox' rows='8' columns ='8'></textarea>
   </div>
-  <button className="btn btn-primary" onClick = {myfunc}>Convert to uppercase</button>
+  <button className="btn btn-primary mx-2" onClick = {myfunc}>Convert to uppercase</button>
+  <button className="btn btn-primary mx-2" onClick ={lowerCase}>Convert to LowerCase</button>
   <div className="container my-3">
     <h1>Your Text Summary</h1>
-    <p>{text.split(" ").length} words and {text.length} characters</p>
-    <p>{0.008 * text.split(" ").length} Minutes to read</p>
+    <p><b>{text.split(" ").length}</b> words and <b>{text.length}</b> characters</p>
+    <p><b>{0.008 * text.split(" ").length}</b> Minutes to read</p>
+    <h2>Preview</h2>
+    <p>{text}</p>
   </div>
     </>
   )
