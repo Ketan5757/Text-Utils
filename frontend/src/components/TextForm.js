@@ -16,11 +16,21 @@ export default function TextForm(props) {
       let newText = text.toLowerCase();
       setText(newText);
     }
+    //sorting the text into ascending order
+    const sortText =() =>{
+      let newText = text.split("").sort().join("");
+      setText(newText);
+    }
+
+    //reverse the text when click on button
+    const reverseText =()=>{
+      let newText = text.split("").reverse().join("");
+      setText(newText);
+    }
 
     const handleonChange =(event)=>{
         console.log("on change");
         setText(event.target.value);
-
     }
 
     const[text, setText] = useState("");
@@ -33,6 +43,8 @@ export default function TextForm(props) {
   </div>
   <button className="btn btn-primary mx-2" onClick = {myfunc}>Convert to uppercase</button>
   <button className="btn btn-primary mx-2" onClick ={lowerCase}>Convert to LowerCase</button>
+  <button className="btn btn-primary mx-2" onClick ={sortText}>sort the text into ascending order</button>
+  <button className="btn btn-primary mx-2" onClick ={reverseText}>reverse the text</button>
   <div className="container my-3">
     <h1>Your Text Summary</h1>
     <p><b>{text.split(" ").length}</b> words and <b>{text.length}</b> characters</p>
