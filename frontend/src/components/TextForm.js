@@ -29,6 +29,10 @@ export default function TextForm(props) {
       setText(newText);
     }
 
+    const clearText =()=>{
+      setText("");
+    }
+
     const handleonChange =(event)=>{
         console.log("on change");
         setText(event.target.value);
@@ -37,21 +41,23 @@ export default function TextForm(props) {
     const[text, setText] = useState("");
   return (
     <>
-    
+    <div className="container" >
   <div className="mb-3">
     <h1>{props.heading}</h1>
-    <textarea className='form-control' value ={text} onChange ={handleonChange}id='myBox' rows='8' columns ='8'></textarea>
+    <textarea className='form-control' value ={text} onChange ={handleonChange} style = {{backgroundColor: props.mode === 'light'?"white":"grey"}} id='myBox' rows='8' columns ='8'></textarea>
   </div>
   <button className="btn btn-primary mx-2" onClick = {myfunc}>Convert to uppercase</button>
   <button className="btn btn-primary mx-2" onClick ={lowerCase}>Convert to LowerCase</button>
   <button className="btn btn-primary mx-2" onClick ={sortText}>sort the text into ascending order</button>
   <button className="btn btn-primary mx-2" onClick ={reverseText}>reverse the text</button>
-  <div className="container my-3">
+  <button className="btn btn-primary mx-2" onClick ={clearText}>Clear Text</button>
+  <div className="container my-3" style = {{backgroundColor: props.mode === 'light'?"white":"grey"}}>
     <h1>Your Text Summary</h1>
     <p><b>{text.split(" ").length}</b> words and <b>{text.length}</b> characters</p>
     <p><b>{0.008 * text.split(" ").length}</b> Minutes to read</p>
     <h2>Preview</h2>
-    <p>{text}</p>
+    <p>{text.length >0 ? text: 'Enter Something to preview here'}</p>
+  </div>
   </div>
     </>
   )
