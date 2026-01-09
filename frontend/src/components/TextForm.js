@@ -28,7 +28,7 @@ export default function TextForm(props) {
       let newText = text.split("").reverse().join("");
       setText(newText);
     }
-
+    //to clear the text 
     const clearText =()=>{
       setText("");
     }
