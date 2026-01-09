@@ -1,6 +1,7 @@
 import './App.css';
 import About from './components/About';
 import Navbar from './components/Navbar';
+import Start from './components/Start';
 //import TextForm from './components/TextForm';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <About/>
     <div className="container">
      {/*<TextForm submit = "submit" heading = "Enter the text to analyze"/>*/}
+     {/*<Start heading ="Hi I am the one"/>*/}
     </div>
     
     </>
