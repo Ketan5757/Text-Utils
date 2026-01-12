@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 //import Start from './components/Start';
 import TextForm from './components/TextForm';
+import Alert from './components/Alert';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     <>
     <Navbar title = "My React App" abouttext ="This is an professional App" mode ={mode} toggleMode ={toggleMode}/>
     {/*<About/>*/}
+    <Alert alert = "This is an Alert"/>
     <div className="container">
      <TextForm submit = "submit" heading = "Enter the text to analyze" mode = {mode}/>
      {/*<Start heading ="Hi I am the one"/>*/}
