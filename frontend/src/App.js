@@ -9,15 +9,29 @@ import Alert from './components/Alert';
 
 function App() {
   const [mode, setMode] = useState('light'); // whether dark mode is enabled or not 
+  const[alert, setAlert] = useState('null');
+
+  const showAlert =(message, type)=>{
+    setAlert ({
+      msg: message,
+      type: type
+    });
+
+    setTimeout(()=>{
+      setAlert(null);
+    },2000);
+  }
 
   const toggleMode =()=>{
     if(mode === 'light'){
       setMode ('dark');
       document.body.style.backgroundColor ="grey";
+      showAlert("Dark mode has been enabled", "success");
     }
     else{
       setMode('light');
       document.body.style.backgroundColor = "white";
+      showAlert("Light Mode has been enabled", "success");
     }
     
   }
@@ -25,9 +39,9 @@ function App() {
     <>
     <Navbar title = "My React App" abouttext ="This is an professional App" mode ={mode} toggleMode ={toggleMode}/>
     {/*<About/>*/}
-    <Alert alert = "This is an Alert"/>
+    <Alert alert={alert}/>
     <div className="container">
-     <TextForm submit = "submit" heading = "Enter the text to analyze" mode = {mode}/>
+     <TextForm showAlert ={showAlert} submit = "submit" heading = "Enter the text to analyze"  mode = {mode}/>
      {/*<Start heading ="Hi I am the one"/>*/}
     </div>
     

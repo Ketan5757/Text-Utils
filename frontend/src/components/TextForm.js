@@ -10,27 +10,33 @@ export default function TextForm(props) {
         console.log("uppercase was clicked" + text);
         let newtext = text.toUpperCase();
         setText(newtext);
+        props.showAlert("The ttext is now converted to upperCase", "success");
+
     }
     //convert the text to lower case
     const lowerCase =() =>{
       console.log("convert the text to lower case" + text);
       let newText = text.toLowerCase();
       setText(newText);
+      props.showAlert("The text is now converted into lowercase", "success");
     }
     //sorting the text into ascending order
     const sortText =() =>{
       let newText = text.split("").sort().join("");
       setText(newText);
+      props.showAlert("The text is now sorted", "success");
     }
 
     //reverse the text when click on button
     const reverseText =()=>{
       let newText = text.split("").reverse().join("");
       setText(newText);
+      props.showAlert("The text is now reversed", "success");
     }
     //to clear the text 
     const clearText =()=>{
       setText("");
+      props.showAlert("Text is now been cleared", "success");
     }
 
     const handleonChange =(event)=>{
