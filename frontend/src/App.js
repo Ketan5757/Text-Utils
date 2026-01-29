@@ -49,7 +49,7 @@ function App() {
       <Routes>
         <Route exact path ="/about" element ={<About mode = {mode}/>}>
         </Route>
-        <Route exact path ="/" element ={<TextForm showAlert ={showAlert} submit = "submit" heading = "Enter the text to analyze"  mode = {mode}/>}>
+        <Route exact path ="/" element ={<TextForm showAlert ={showAlert} submit = "submit" heading = "Try TextUtils - Sorting, Converting text to upper & lowercase, reversing, removing "  mode = {mode}/>}>
         </Route>
       </Routes>
      {/*<Start heading ="Hi I am the one"/>*/}

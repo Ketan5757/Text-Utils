@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import React from 'react'
 import PropTypes from 'prop-types'
+import './TextForm.css'
 
 
 export default function TextForm(props) {
@@ -49,20 +50,20 @@ export default function TextForm(props) {
     <>
     <div className="container" >
   <div className="mb-3">
-    <h1>{props.heading}</h1>
+    <h1><strong>{props.heading}</strong></h1>
     <textarea className='form-control' value ={text} onChange ={handleonChange} style = {{backgroundColor: props.mode === 'light'?"white":"grey"}} id='myBox' rows='8' columns ='8'></textarea>
   </div>
-  <button className="btn btn-primary mx-2" onClick = {myfunc}>Convert to uppercase</button>
-  <button className="btn btn-primary mx-2" onClick ={lowerCase}>Convert to LowerCase</button>
-  <button className="btn btn-primary mx-2" onClick ={sortText}>sort the text into ascending order</button>
-  <button className="btn btn-primary mx-2" onClick ={reverseText}>reverse the text</button>
-  <button className="btn btn-primary mx-2" onClick ={clearText}>Clear Text</button>
+  <button disabled = {text.length === 0} className="btn btn-primary mx-2" onClick = {myfunc}>Convert to uppercase</button>
+  <button disabled = {text.length === 0} className="btn btn-primary mx-2" onClick ={lowerCase}>Convert to LowerCase</button>
+  <button disabled = {text.length === 0} className="btn btn-primary mx-2" onClick ={sortText}>sort the text into ascending order</button>
+  <button disabled = {text.length === 0} className="btn btn-primary mx-2" onClick ={reverseText}>reverse the text</button>
+  <button disabled = {text.length === 0} className="btn btn-primary mx-2" onClick ={clearText}>Clear Text</button>
   <div className="container my-3" style = {{backgroundColor: props.mode === 'light'?"white":"grey"}}>
     <h1>Your Text Summary</h1>
     <p><b>{text.split(" ").filter((element)=>{return element.length!==0}).length}</b> words and <b>{text.length}</b> characters</p>
     <p><b>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length}</b> Minutes to read</p>
     <h2>Preview</h2>
-    <p>{text.length >0 ? text: 'Enter Something to preview here'}</p>
+    <p>{text.length >0 ? text: 'Nothing to preview!'}</p>
   </div>
   </div>
     </>
