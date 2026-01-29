@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 //import Start from './components/Start';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-import Footer from './components/Footer';
+//import Footer from './components/Footer';
 import About from './components/About';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -47,14 +47,14 @@ function App() {
     <Alert alert={alert}/>
     <div className="container">
       <Routes>
-        <Route exact path ="/about" element ={<About/>}>
+        <Route exact path ="/about" element ={<About mode = {mode}/>}>
         </Route>
         <Route exact path ="/" element ={<TextForm showAlert ={showAlert} submit = "submit" heading = "Enter the text to analyze"  mode = {mode}/>}>
         </Route>
       </Routes>
      {/*<Start heading ="Hi I am the one"/>*/}
      {/*<About/>*/}
-     <Footer/>
+     {/*<Footer/>*/ }
     </div>
     </BrowserRouter>
     
