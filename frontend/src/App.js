@@ -23,8 +23,17 @@ function App() {
       setAlert(null);
     },2000);
   }
-
-  const toggleMode =()=>{
+  
+  const bodyColorremove=()=>{
+    document.body.classList.remove('bg-warning');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-danger');
+  }
+  
+  const toggleMode =(cls)=>{
+    bodyColorremove();
+    console.log(cls);
+    document.body.classList.add('bg-'+ cls);
     if(mode === 'light'){
       setMode ('dark');
       document.body.style.backgroundColor ="grey";
